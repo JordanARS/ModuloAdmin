@@ -1,8 +1,14 @@
 import * as React from 'react';
 import { useState } from 'react';
+import Select from 'react-select';
 
-
+const cargo = [
+    {label: 'Estudiante', value: 'Estudiante'},
+    {label: 'Docente', value: 'Docente'},
+    {label: 'Bienestar', value: 'Bienestar'}
+]
 export default function Registro(){
+
 
     return(
         
@@ -17,9 +23,12 @@ export default function Registro(){
                     <label className='text-lg font-medium'>Correo</label>
                     <input className='w-full border-2 border-gray-200 rounded-xl p-3 mt-1 bg-slate-50' placeholder='Ingrese su correo'/>
                 </div>
-                <div>
-                    <label className='text-lg font-medium' htmlFor="mySelect">Cargo</label>
-                    <select id="mySelect" className='w-full border-2 border-gray-200 rounded-xl p-3 mt-1 bg-slate-50' placeholder='Ingrese su contraseña' value="selectedOption"/>
+                <div className='Registro-container'>
+                    <label className='text-lg font-medium'>Cargo</label>
+                    <Select className=''
+                    defaultValue={cargo[0]}
+                    options = {cargo}
+                    />
                 </div>
                 <div>
                     <label className='text-lg font-medium'>Contraseña</label>
@@ -32,7 +41,6 @@ export default function Registro(){
                 
                 <div className='mt-8 flex justify-center items-center'>
                     
-                    <button className='font-medium text-sky-500 ' type="">¿Ha olvidado su contraseña?</button>
                 </div>
                 <div className='mt-6 flex flex-col gap-y-4'>
                     
